@@ -4,7 +4,8 @@
   "description": "A leaderboard where you can add your own score and watch others' scores. Built with JavaScript using webpack",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
