@@ -45,3 +45,9 @@
 input {
   height: 30px;
 }
+
+.submit {
+  height: 30px;
+  width: 70px;
+  align-self: flex-end;
+}
