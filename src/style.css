@@ -6,3 +6,14 @@
   font-style: normal;
 }
 
+.head {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refresh {
+  width: 100px;
+  height: 30px;
+}
