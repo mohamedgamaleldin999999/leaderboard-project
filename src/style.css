@@ -7,5 +7,6 @@
 }
 
 .hello {
+  font-family: 'MyFont';
   color: red;
 }
