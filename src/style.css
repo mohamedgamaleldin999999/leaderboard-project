@@ -6,6 +6,11 @@
   font-style: normal;
 }
 
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .head {
   display: flex;
   width: 300px;
