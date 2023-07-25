@@ -1,0 +1,12 @@
+{
+  "name": "leaderboard-project",
+  "version": "1.0.0",
+  "description": "A leaderboard where you can add your own score and watch others' scores. Built with JavaScript using webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
