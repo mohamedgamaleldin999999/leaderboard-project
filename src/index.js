@@ -14,9 +14,6 @@ const crossicon = document.querySelector(".cross-icon");
 const inputScoreContainer = document.querySelector(".addScores");
 
 refreshBtn.addEventListener("click", async (e) => {
-  party.confetti(document.body, {
-    count: party.variation.range(100, 200),
-  });
   e.preventDefault();
   scoreList.innerHTML = "";
   getData();
@@ -24,9 +21,6 @@ refreshBtn.addEventListener("click", async (e) => {
 
 submit.addEventListener("click", (e) => {
   if (nameInput.value && scoreInput.value) {
-    party.confetti(document.body, {
-      count: party.variation.range(100, 200),
-    });
     const list = new Score(nameInput.value, scoreInput.value);
     e.preventDefault();
     postData(list);
