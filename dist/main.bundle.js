@@ -126,7 +126,47 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module 'party-js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n/* harmony import */ var _modules_getData_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/getData.js */ \"./src/modules/getData.js\");\n/* harmony import */ var _modules_postData_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/postData.js */ \"./src/modules/postData.js\");\n/* harmony import */ var _modules_score_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/score.js */ \"./src/modules/score.js\");\n/* harmony import */ var _modules_validation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/validation.js */ \"./src/modules/validation.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst scoreList = document.querySelector(\".scoreList\");\r\nconst submit = document.querySelector(\".submit\");\r\nconst refreshBtn = document.querySelector(\".scoreRefresh\");\r\nconst nameInput = document.querySelector(\".nameInput\");\r\nconst scoreInput = document.querySelector(\".scoreInput\");\r\nconst hamburger = document.querySelector(\".ham-container\");\r\nconst crossicon = document.querySelector(\".cross-icon\");\r\nconst inputScoreContainer = document.querySelector(\".addScores\");\r\n\r\nrefreshBtn.addEventListener(\"click\", async (e) => {\r\n  Object(function webpackMissingModule() { var e = new Error(\"Cannot find module 'party-js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(document.body, {\r\n    count: Object(function webpackMissingModule() { var e = new Error(\"Cannot find module 'party-js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).range(100, 200),\r\n  });\r\n  e.preventDefault();\r\n  scoreList.innerHTML = \"\";\r\n  (0,_modules_getData_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n});\r\n\r\nsubmit.addEventListener(\"click\", (e) => {\r\n  if (nameInput.value && scoreInput.value) {\r\n    Object(function webpackMissingModule() { var e = new Error(\"Cannot find module 'party-js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(document.body, {\r\n      count: Object(function webpackMissingModule() { var e = new Error(\"Cannot find module 'party-js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).range(100, 200),\r\n    });\r\n    const list = new _modules_score_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"](nameInput.value, scoreInput.value);\r\n    e.preventDefault();\r\n    (0,_modules_postData_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(list);\r\n    scoreList.innerHTML = \"\";\r\n    nameInput.value = \"\";\r\n    scoreInput.value = \"\";\r\n\r\n    nameInput.style.border = \"none\";\r\n    nameInput.style.placeholder = \"Your name\";\r\n    nameInput.style.removeProperty(\"--color\");\r\n\r\n    scoreInput.style.border = \"none\";\r\n    scoreInput.style.placeholder = \"Your score\";\r\n    scoreInput.style.removeProperty(\"--color\");\r\n    inputScoreContainer.setAttribute(\"data-visible\", \"false\");\r\n    document.body.style.overflow = \"auto\";\r\n    setTimeout(_modules_getData_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"], 500);\r\n  } else {\r\n    (0,_modules_validation_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(nameInput, scoreInput);\r\n\r\n    nameInput.placeholder = \"Please type something!\";\r\n    nameInput.style.border = \"2px solid red\";\r\n    nameInput.style.setProperty(\"--color\", \"red\");\r\n\r\n    scoreInput.placeholder = \"Please type something!\";\r\n    scoreInput.style.border = \"2px solid red\";\r\n    scoreInput.style.setProperty(\"--color\", \"red\");\r\n  }\r\n});\r\n\r\nhamburger.addEventListener(\"click\", () => {\r\n  document.body.style.overflow = \"hidden\";\r\n  const visibility = inputScoreContainer.getAttribute(\"data-visible\");\r\n  if (visibility === \"false\") {\r\n    inputScoreContainer.setAttribute(\"data-visible\", \"true\");\r\n  } else if (visibility === \"true\") {\r\n    inputScoreContainer.setAttribute(\"data-visible\", \"false\");\r\n  }\r\n});\r\n\r\ncrossicon.addEventListener(\"click\", () => {\r\n  inputScoreContainer.setAttribute(\"data-visible\", \"false\");\r\n  document.body.style.overflow = \"auto\";\r\n});\r\n\r\nwindow.addEventListener(\"DOMContentLoaded\", _modules_getData_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/getData.js":
+/*!********************************!*\
+  !*** ./src/modules/getData.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getData = async () => {\r\n  const request = await fetch(\"https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/M34398fsnvkkjbjfjis/scores/\");\r\n  const data = await request.json();\r\n  data.result.sort((a, b) => {\r\n    return b.score - a.score;\r\n  });\r\n  const getContent = async (data) => {\r\n    data.result.forEach((board) => {\r\n      document.querySelector(\".scoreList\").innerHTML += `\r\n              <li class=\"eachScore\">${board.user} : ${board.score}</li>\r\n          `;\r\n    });\r\n  };\r\n  getContent(data);\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);\r\n\n\n//# sourceURL=webpack:///./src/modules/getData.js?");
+
+/***/ }),
+
+/***/ "./src/modules/postData.js":
+/*!*********************************!*\
+  !*** ./src/modules/postData.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst postData = async (obj) => {\r\n  const content = await fetch(\"https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/M34398fsnvkkjbjfjis/scores/\", {\r\n    method: \"POST\",\r\n    headers: { \"Content-Type\": \"application/json\" },\r\n    body: JSON.stringify({\r\n      user: obj.name,\r\n      score: obj.score,\r\n    }),\r\n  });\r\n  const afterContent = await content.json();\r\n  return afterContent;\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postData);\n\n//# sourceURL=webpack:///./src/modules/postData.js?");
+
+/***/ }),
+
+/***/ "./src/modules/score.js":
+/*!******************************!*\
+  !*** ./src/modules/score.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Score)\n/* harmony export */ });\nclass Score {\r\n  constructor(name, score) {\r\n    this.name = name;\r\n    this.score = score;\r\n  }\r\n}\r\n\n\n//# sourceURL=webpack:///./src/modules/score.js?");
+
+/***/ }),
+
+/***/ "./src/modules/validation.js":
+/*!***********************************!*\
+  !*** ./src/modules/validation.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst inValidInput = (nameInput, scoreInput) => {\r\n  nameInput.placeholder = 'Please type something!';\r\n  nameInput.style.border = '2px solid red';\r\n  nameInput.style.setProperty('--color', 'red');\r\n\r\n  scoreInput.placeholder = 'Please type something!';\r\n  scoreInput.style.border = '2px solid red';\r\n  scoreInput.style.setProperty('--color', 'red');\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (inValidInput);\n\n//# sourceURL=webpack:///./src/modules/validation.js?");
 
 /***/ }),
 

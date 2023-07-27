@@ -1,5 +1,4 @@
 import './style.css';
-import party from "party-js";
 import getData from "./modules/getData.js";
 import postData from "./modules/postData.js";
 import Score from "./modules/score.js";
