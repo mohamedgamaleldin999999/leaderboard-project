@@ -52,8 +52,7 @@ Visual Studio Code using HTML, Css, and Javascript Languages
 ### Key Features <a name="key-features"></a>
 - [Feature1]:Responsive Design: The project involves developing a mobile-first approach, followed by a desktop version, and includes a mobile menu and details modal.
 - [Feature2]:Submit Form: The project includes a contact form that requires validation and preserves data in the browser.
-- [Feature3]:Deployment: The project also includes the deployment of the application to a live environment.
-- [Feature4]:Accessibility: One of the tasks involves evaluating the accessibility of the application, which ensures that the application is usable by everyone, including people with disabilities.
+- [Feature3]:Accessibility: One of the tasks involves evaluating the accessibility of the application, which ensures that the application is usable by everyone, including people with disabilities.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
