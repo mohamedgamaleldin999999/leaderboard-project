@@ -32,7 +32,7 @@
 
 
 
-**[Leaderboard]** is a website that serves as a showcase of my skills, achievements, and experiences to potential employers, clients, or collaborators.
+**[Leaderboard]** is a website that serves as a showcase of my skills, achievements, and experiences to potential employers, clients, or collaborators. It allows the user to add and fetch scores from APIs.
 
 ## 🛠 Built With <a name="built-with"></a>
 Visual Studio Code using HTML, Css, and Javascript Languages
